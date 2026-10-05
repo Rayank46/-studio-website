@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Makeup Studio by Saad</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#090807;--panel:#171312;--ink:#f8f2ec;--mute:#c4b9b0;--accent:#d6a06c;--line:rgba(248,242,236,.2);color-scheme:dark;box-sizing:border-box}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:1rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 'Figtree',system-ui,sans-serif;overflow-x:hidden}
+h1,h2{font-family:'Gloock',Georgia,serif;font-weight:400;margin:0;line-height:1.08}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+header.top{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding:1rem max(2rem,calc((100% - 1280px)/2));max-width:none;margin:0 auto;background:rgba(9,8,7,.96);backdrop-filter:blur(12px)}
+header.top b{font:400 1.35rem 'Gloock',Georgia,serif}
+.topnav{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.topnav button{position:relative;appearance:none;background:transparent;color:var(--ink);text-decoration:none;font:600 .9rem 'Figtree',sans-serif;border:1px solid var(--line);padding:.55rem .8rem;border-radius:4px;cursor:pointer;transition:transform .22s ease,border-color .22s ease,color .22s ease,background .22s ease,box-shadow .22s ease}
+.topnav button:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 5px 20px rgba(214,160,108,.18)}
+.topnav button[aria-pressed="true"]{background:var(--accent);color:#160f0b;border-color:var(--accent);box-shadow:0 0 0 1px rgba(214,160,108,.35),0 5px 20px rgba(214,160,108,.2)}
+[data-view][hidden]{display:none!important}
+[data-view]:not([hidden]){animation:view-enter .32s ease both}
+@keyframes view-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.hero{position:relative;isolation:isolate;display:grid;grid-template-columns:1fr;gap:2rem;width:100%;max-width:none;min-height:76vh;margin:0;padding:4rem max(2rem,calc((100% - 1280px)/2));align-items:center;background-image:url("makeup%20studio%20image/IMG_8950.JPEG");background-size:cover;background-position:center 36%;color:#fff}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(0,0,0,.56)}
+.hero h1{font-size:5.5rem;max-width:9ch;color:#fff}
+.hero h1 em{display:block;font-size:1.55rem;color:var(--accent);margin-top:1.2rem;font-style:normal;line-height:1.2}
+.hero p{color:#eee3dc;max-width:42ch;font-size:1.15rem}
+.btn{display:inline-flex;margin-top:.8rem;text-decoration:none;background:var(--accent);color:#160f0b;border-radius:4px;padding:.8rem 1.1rem;font-weight:700}
+section{max-width:1320px;margin:0 auto;padding:4rem 2rem}
+h2{font-size:3.5rem;margin-bottom:.8rem}
+.lead{color:var(--mute);max-width:44ch;margin:0 0 2rem}
+.work-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.work-card,.portfolio-card{position:relative;display:block;width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--panel);border-radius:4px;isolation:isolate}
+.work-card img,.portfolio-card img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform .55s cubic-bezier(.2,.75,.25,1)}
+.work-card::after,.portfolio-card::after{content:"";position:absolute;inset:35% 0 0;z-index:1;background:linear-gradient(transparent,rgba(0,0,0,.78));pointer-events:none}
+.work-card:hover img,.portfolio-card:hover img{transform:scale(1.045)}
+.look-name{position:absolute;z-index:2;inset:auto 1rem 1rem;color:#fff;font:400 1.35rem 'Gloock',Georgia,serif;text-shadow:0 1px 12px rgba(0,0,0,.55)}
+.work-card{animation:card-enter .5s both}
+.work-card:nth-child(2){animation-delay:.04s}.work-card:nth-child(3){animation-delay:.08s}.work-card:nth-child(4){animation-delay:.12s}.work-card:nth-child(5){animation-delay:.16s}.work-card:nth-child(6){animation-delay:.2s}.work-card:nth-child(7){animation-delay:.24s}.work-card:nth-child(8){animation-delay:.28s}.work-card:nth-child(9){animation-delay:.32s}.work-card:nth-child(10){animation-delay:.36s}.work-card:nth-child(11){animation-delay:.4s}
+@keyframes card-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.portfolio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+.portfolio-card{display:block;width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--panel);border-radius:4px}
+.portfolio-card img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 35%;transition:transform .5s}
+.portfolio-card:hover img{transform:scale(1.02)}
+.artist-video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#171312;border:1px solid var(--line);border-radius:4px}
+.reel-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.reel-card video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#171312;border:1px solid var(--line);border-radius:4px}
+.reel-card p{margin:.55rem 0 0;color:var(--mute);font-family:'Gloock',Georgia,serif;font-size:1.1rem}
+.book{background:#171312;color:var(--ink);margin:1rem 0 4rem;padding:3rem max(2rem,calc((100% - 1280px)/2))}
+.bw{max-width:1280px;margin:0 auto}
+.fields{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:1.5rem 0}
+.fields input,.fields select{font:inherit;padding:.9rem 1rem;border-radius:4px;border:1px solid var(--line);background:#100e0d;color:var(--ink);width:100%}
+.fields ::placeholder{color:var(--mute)}
+.go{background:var(--accent);color:#160f0b;border:0;border-radius:4px;padding:1rem 1.4rem;font:700 1rem 'Figtree',sans-serif;cursor:pointer}
+footer{text-align:center;color:var(--mute);padding:1rem 1.5rem 3rem}
+@media(min-width:760px){.hero{grid-template-columns:1fr auto}.hero>div{max-width:100%}}
+@media(max-width:620px){header.top{padding:1rem;flex-wrap:wrap;gap:.75rem}header.top b{font-size:1.1rem}.topnav{width:100%;justify-content:flex-start;gap:.4rem}.topnav button{padding:.4rem .6rem;font-size:.82rem}.hero{min-height:72vh;padding:3rem 1rem;background-position:58% center}.hero h1{font-size:3.3rem}.hero h1 em{font-size:1.3rem}section{padding:3rem 1rem}.portfolio-grid{gap:.75rem}.work-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}.reel-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}.book{margin:0 0 3rem;padding:2.5rem 1rem}h2{font-size:2.5rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.work-card img,.portfolio-card img{transition:none}.topnav button,.work-card,.portfolio-card,[data-view]:not([hidden]){animation:none;transition:none}}
+</style>
+</head>
+<body>
+<header class="top" id="top"><b>Makeup Studio by Saad</b><nav class="topnav" aria-label="Main navigation"><button type="button" data-view-target="home" aria-pressed="true">Home</button><button type="button" data-view-target="portfolio" aria-pressed="false">Our work</button><button type="button" data-view-target="looks" aria-pressed="false">Signature looks</button><button type="button" data-view-target="film" aria-pressed="false">Artist at work</button><button type="button" data-view-target="reels" aria-pressed="false">Reels</button><button type="button" data-view-target="book" aria-pressed="false">Book a look</button></nav></header>
+
+<main>
+<div class="hero page-view" id="home" data-view="home">
+  <div>
+    <h1>Makeup Studio<em>by Saad</em></h1>
+    <p>Bridal artistry, considered details, and a look that feels entirely your own.</p>
+    <button class="btn" type="button" data-view-target="portfolio">View all 11 looks</button>
+  </div>
+</div>
+
+<section id="looks" data-view="looks" hidden>
+  <h2>Signature looks</h2>
+  <p class="lead">Looks made at Saad.</p>
+  <div class="portfolio-grid">
+    <div class="portfolio-card"><img src="makeup%20studio%20image/IMG_8950.JPEG" alt="Bride in a red bridal outfit with a dupatta" loading="lazy"><span class="look-name">Barat Look</span></div>
+    <div class="portfolio-card"><img src="makeup%20studio%20image/IMG_0620.jpg" alt="Bride in a white gown with soft natural makeup" loading="lazy"><span class="look-name">Soft Bridal</span></div>
+  </div>
+</section>
+
+<section id="portfolio" data-view="portfolio" hidden>
+  <h2>Our work</h2>
+  <p class="lead">A selection of bridal and occasion looks from the studio.</p>
+  <div class="work-grid">
+    <div class="work-card"><img src="makeup%20studio%20image/IMG_8950.JPEG" alt="Bride in a red bridal outfit with a dupatta" loading="lazy"><span class="look-name">Barat Look</span></div>
+    <div class="work-card"><img src="makeup%20studio%20image/IMG_8949.JPEG" alt="Bride in a red and gold bridal outfit" loading="lazy"><span class="look-name">Classic Barat</span></div>
+    <div class="work-card"><img src="makeup%20studio%20image/IMG_8941.JPG.jpeg" alt="Bride wearing warm-toned makeup and traditional jewellery" loading="lazy"><span class="look-name">Golden Barat</span></div>
+    <div class="work-card"><img src="makeup%20studio%20image/IMG_6658.JPG.jpeg" alt="Bride in a richly embellished red wedding outfit" loading="lazy"><span class="look-name">Traditional Bridal</span></div>
+    <div class="work-card"><img src="makeup%20studio%20image/IMG_4837.JPG.jpeg" alt="Close-up of bridal makeup with jewel-toned details" loading="lazy"><span class="look-name">Mehndi Glam</span></div>
+    <div class="work-card"><img src="makeup%20studio%20image/IMG_3906.JPEG" alt="Close-up beauty look with sculpted brows and rose lipstick" loading="lazy"><span class="look-name">Soft Glam</span></div>
+    <div class="work-card"><img src="makeup%20studio%20image/IMG_3903.JPEG" alt="Bride with soft makeup and luminous skin" loading="lazy"><span class="look-name">Rose Soft Glam</span></div>
+    <div class="work-card"><img src="makeup%20studio%20image/IMG_0620.jpg" alt="Bride in a white gown with natural bridal makeup" loading="lazy"><span class="look-name">Modern Soft Bridal</span></div>
+    <div class="work-card"><img src="makeup%20studio%20image/IMG_0364.JPG.jpeg" alt="Bride in emerald green with a dupatta over her head" loading="lazy"><span class="look-name">Mehndi Look</span></div>
+    <div class="work-card"><img src="makeup%20studio%20image/IMG_0442.PNG" alt="Bride in a champagne-colored embellished outfit" loading="lazy"><span class="look-name">Champagne Bridal</span></div>
+    <div class="work-card"><img src="makeup%20studio%20image/IMG_0451.JPG.jpeg" alt="Close-up of warm bridal makeup with gold accessories" loading="lazy"><span class="look-name">Warm Soft Glam</span></div>
+  </div>
+</section>
+
+<section id="film" data-view="film" hidden>
+  <h2>Artist at work</h2>
+  <p class="lead">A look behind the scenes at the studio.</p>
+  <video class="artist-video" controls playsinline preload="none" poster="makeup%20studio%20image/IMG_8949.JPEG" aria-label="Makeup artist working in the studio">
+    <source src="makeup%20studio%20image/IMG_4640-web.mp4" type="video/mp4">
+  </video>
+</section>
+
+<section id="reels" data-view="reels" hidden>
+  <h2>Reels</h2>
+  <div class="reel-grid">
+    <article class="reel-card"><video controls playsinline preload="none" poster="makeup%20studio%20image/IMG_4837.JPG.jpeg" aria-label="Studio reel 1"><source src="makeup%20studio%20image/IMG_1123-web.mp4" type="video/mp4"></video><p>Mehndi details</p></article>
+    <article class="reel-card"><video controls playsinline preload="none" poster="makeup%20studio%20image/IMG_3906.JPEG" aria-label="Studio reel 2"><source src="makeup%20studio%20image/IMG_2294-web.mp4" type="video/mp4"></video><p>Soft glam</p></article>
+    <article class="reel-card"><video controls playsinline preload="none" poster="makeup%20studio%20image/IMG_8941.JPG.jpeg" aria-label="Studio reel 3"><source src="makeup%20studio%20image/IMG_4190-web.mp4" type="video/mp4"></video><p>Bridal finish</p></article>
+  </div>
+</section>
+
+<div class="book page-view" id="book" data-view="book" hidden><div class="bw">
+  <h2>Reserve your chair</h2>
+  <p>Send your details and Saad will reply on WhatsApp.</p>
+  <div class="fields">
+    <input id="n" placeholder="Your name" aria-label="Your name">
+    <input id="d" type="date" aria-label="Date">
+    <select id="s" aria-label="Service"><option>Bridal glam</option><option>Party makeup</option><option>Editorial</option><option>Masterclass</option></select>
+  </div>
+  <button class="go" id="send">Send on WhatsApp</button>
+</div></div>
+</main>
+<footer>Makeup Studio by Saad. By appointment only.</footer>
+
+<script>
+function showView(name){
+  document.querySelectorAll('[data-view]').forEach(view=>{view.hidden=view.dataset.view!==name});
+  document.querySelectorAll('[data-view-target]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.viewTarget===name)));
+  window.scrollTo({top:0,left:0,behavior:'instant'});
+  if(name==='film'||name==='reels')document.querySelectorAll(`#${name} video`).forEach(video=>{video.preload='metadata';video.load()});
+}
+document.querySelectorAll('[data-view-target]').forEach(button=>button.addEventListener('click',()=>showView(button.dataset.viewTarget)));
+showView('home');
+document.getElementById('send').onclick=()=>{
+  const n=document.getElementById('n').value||'a client',d=document.getElementById('d').value||'a date to be agreed',s=document.getElementById('s').value;
+  const message=`Hi Saad, I'm ${n}. I'd like to book ${s} on ${d}.`;
+  window.open('https://wa.me/923170953934?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');
+};
+</script>
+</body>
+</html>

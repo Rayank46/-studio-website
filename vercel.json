@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/Saad%20Makeup%20Studio.html"
+    }
+  ]
+}
